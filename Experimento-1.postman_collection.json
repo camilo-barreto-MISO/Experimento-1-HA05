@@ -121,11 +121,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:6001/base-de-datos",
+							"raw": "localhost:6000/base-de-datos",
 							"host": [
 								"localhost"
 							],
-							"port": "6001",
+							"port": "6000",
 							"path": [
 								"base-de-datos"
 							]
