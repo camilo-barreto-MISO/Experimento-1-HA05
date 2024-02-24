@@ -1,0 +1,62 @@
+services:
+  redis:
+    image: redis/redis-stack
+    ports:
+      - 8002:8001
+    volumes:
+      - ./redis_data:/data
+  
+  usuarios:
+    build: ./usuarios
+    ports:
+      - 6000:5000
+    volumes:
+      - ./usuarios:/src
+    working_dir: /src/
+    command: flask run --host=0.0.0.0
+    env_file:
+      - .env 
+    depends_on:
+      - redis
+
+
+  usuarios-worker:
+    build: ./usuarios
+    volumes:
+      - ./usuarios:/src
+    working_dir: /src/
+    command: celery -A tareas.tareas worker -l DEBUG -Q registo_usuario,registo_usuario_pendientes  -P solo
+    env_file:
+      - .env 
+    depends_on:
+    - redis
+
+
+  monitor:
+    build: ./monitor
+    volumes:
+      - ./monitor:/src
+    working_dir: /src/
+    command: python app.py
+    env_file:
+      - .env 
+    depends_on:
+    - redis
+    - usuarios
+
+  gestor-mensajes:
+    build: ./gestor-mensajes
+    ports:
+      - 6001:5000
+    volumes:
+      - ./gestor-mensajes:/src
+    working_dir: /src/
+    command: flask run --host=0.0.0.0
+    env_file:
+      - .env 
+    depends_on:
+    - redis
+    - usuarios-worker
+
+
+  
