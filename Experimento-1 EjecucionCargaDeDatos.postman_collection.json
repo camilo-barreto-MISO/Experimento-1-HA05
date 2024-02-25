@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "2a73f29d-7aad-4c6a-b5e3-bc412095128b",
+		"name": "Experimento-1 EjecucionCargaDeDatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4872632"
+	},
+	"item": [
+		{
+			"name": "GenerarDesconexion",
+			"item": [
+				{
+					"name": "Desconectar Bd",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6001/desconectar-bd",
+							"host": [
+								"localhost"
+							],
+							"port": "6001",
+							"path": [
+								"desconectar-bd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VerificarServicioSinConexion",
+			"item": [
+				{
+					"name": "Estado-salud",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );\r",
+									"pm.test(\"name is correct\", () => \r",
+									"  pm.expect(pm.response.text().trim()).to.contain(\"unhealthy\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6000/health",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProcesarSolicitudes",
+			"item": [
+				{
+					"name": "Registrar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6001/usuario/registrar?usuario={{first_name}}&apellido={{last_name}}",
+							"host": [
+								"localhost"
+							],
+							"port": "6001",
+							"path": [
+								"usuario",
+								"registrar"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "{{first_name}}"
+								},
+								{
+									"key": "apellido",
+									"value": "{{last_name}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ReestablecerConexion",
+			"item": [
+				{
+					"name": "Conectar bd",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6001/conectar-bd",
+							"host": [
+								"localhost"
+							],
+							"port": "6001",
+							"path": [
+								"conectar-bd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VerificarServicioConConexion",
+			"item": [
+				{
+					"name": "Estado-salud",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );\r",
+									"pm.test(\"name is correct\", () => \r",
+									"  pm.expect(pm.response.text().trim()).to.contain(\"healthy\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6000/health",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

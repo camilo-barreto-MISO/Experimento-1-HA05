@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "5bca711d-9d7f-4d52-8f0a-41b60b22ee18",
+		"name": "Experimento-1 EjecucionVerificacionDeDatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4872632"
+	},
+	"item": [
+		{
+			"name": "ComprobarDatos",
+			"item": [
+				{
+					"name": "Estado-salud",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6000/health",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener datos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"success status\", () => pm.response.to.be.success );\r",
+									"const expected = \"se registro el usuario: \" + pm.variables.get(\"first_name\") + \" \"+ pm.variables.get(\"last_name\");\r",
+									"pm.test(\"name is correct\", () => \r",
+									"  pm.expect(pm.response.text().trim()).to.contain(expected));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6000/base-de-datos",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"base-de-datos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
