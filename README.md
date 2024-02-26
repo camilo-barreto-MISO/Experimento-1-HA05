@@ -14,7 +14,7 @@ En la raiz se encuentran tres colecciones de postman para correr las pruebas:
 2. Experimento-1 EjecucionVerificacionDeDatos.postman_collection.json
 3. Experimento-1.postman_collection.json
 
-### 1. Ejecutar el experimento, lo hicimos generando 1.000 iteraciones.
+### 1. Ejecutar el experimento, lo hicimos generando 100 iteraciones.
 En esta colección los pasos son:
 - Desconectamos la base de datos
 - Hacemos lectura del estado de salud para verificar que el API responda que no está disponible
@@ -22,12 +22,18 @@ En esta colección los pasos son:
 - Conectamos la base de datos nuevamente
 - Hacemos nuevamnete lectura del estado de salud para verificar que el API responda que está disponible
 
+En postman corra la colección completa `Run collection`
+Seleccione el archivo `usuarios.csv` que está en el repositorio para realizar las 100 iteraciones
+
 Con esto estamos garantizando que los registros se realicen en primera instancia con un fallo de base de datos.
   
-### 2. Ejecutar la validación. Se hace una iteración de los 1.000 usuarios que se debieron haber creado
+### 2. Ejecutar la validación. Se hace una iteración de los 100 usuarios que se debieron haber creado
 La segunda colección realiza lo siguiente:
 - Verificamos que el estado de salud de la base de datos sea correcto.
 - Obtenemos uno por uno los usuarios que deberían haber quedado creado.
+
+En postman corra la colección completa `Run collection`
+Seleccione el archivo `usuarios.csv` que está en el repositorio para realizar las 100 iteraciones
 
 ### 3. Volver a ejecutar el experimento
 Si desea volver a ejecutar el experimento, le pedimos el favor que limpie la base de datos.
