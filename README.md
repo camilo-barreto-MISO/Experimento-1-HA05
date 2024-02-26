@@ -22,7 +22,7 @@ En esta colección los pasos son:
 - Hacemos lectura del estado de salud para verificar que el API responda que no está disponible
 - Registramos el usuario sin tener conexión
 - Conectamos la base de datos nuevamente
-- Hacemos nuevamnete lectura del estado de salud para verificar que el API responda que está disponible
+- Hacemos nuevamente lectura del estado de salud para verificar que el API responda que está disponible
 
 En postman corra la colección completa `Run collection`
 Seleccione el archivo `usuarios.csv` que está en el repositorio para realizar las 100 iteraciones
