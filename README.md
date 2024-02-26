@@ -26,6 +26,9 @@ En postman corra la colección completa `Run collection`
 Seleccione el archivo `usuarios.csv` que está en el repositorio para realizar las 100 iteraciones
 
 Con esto estamos garantizando que los registros se realicen en primera instancia con un fallo de base de datos.
+
+![Resultados del registro de usuarios](https://github.com/camilo-barreto-MISO/Experimento-1-HA05/assets/142316821/c2088a02-0648-4bd5-a83d-7d28588d91ad)
+
   
 ### 2. Ejecutar la validación. Se hace una iteración de los 100 usuarios que se debieron haber creado
 La segunda colección realiza lo siguiente:
@@ -34,6 +37,9 @@ La segunda colección realiza lo siguiente:
 
 En postman corra la colección completa `Run collection`
 Seleccione el archivo `usuarios.csv` que está en el repositorio para realizar las 100 iteraciones
+
+![Resultados de la verificación](https://github.com/camilo-barreto-MISO/Experimento-1-HA05/assets/142316821/9f7c04e1-6512-4e5a-b210-5a72bb0d865e)
+
 
 ### 3. Volver a ejecutar el experimento
 Si desea volver a ejecutar el experimento, le pedimos el favor que limpie la base de datos.
