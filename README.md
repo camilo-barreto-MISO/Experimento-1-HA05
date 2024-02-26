@@ -48,4 +48,6 @@ Si desea volver a ejecutar el experimento, le pedimos el favor que limpie la bas
 
 En la colección 3 Experimento-1, encuentra el servicio: **Borrar base de datos**
 
-Por favor ejecute este API antes de volver a genrar
+Por favor ejecute este API antes de volver a generar
+
+[Link al video de la ejecución del experimento](https://drive.google.com/file/d/13Cx_E3tTSz5Omfs0QXLwr3ISZbkQUg4s/view?usp=sharing)
