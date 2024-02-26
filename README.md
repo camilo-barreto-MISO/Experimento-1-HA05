@@ -14,6 +14,8 @@ En la raiz se encuentran tres colecciones de postman para correr las pruebas:
 2. Experimento-1 EjecucionVerificacionDeDatos.postman_collection.json
 3. Experimento-1.postman_collection.json
 
+**Las dos primeras colecciones tienen tests en el postman que verifican el resultado esperado y los resultados se pueden ver tan pronto termina la ejecución.**
+
 ### 1. Ejecutar el experimento, lo hicimos generando 100 iteraciones.
 En esta colección los pasos son:
 - Desconectamos la base de datos
